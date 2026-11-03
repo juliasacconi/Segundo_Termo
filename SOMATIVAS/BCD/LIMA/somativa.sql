@@ -273,7 +273,7 @@ START TRANSACTION;
 
 UPDATE emprestimo 
 SET status = 'DEVOLVIDO', data_devolucao_prevista = CURDATE() 
-WHERE id_emprestimo = 5 AND status = 'ABERTO';
+WHERE id_emprestimo = 5 AND status = 'Ativo';
 
 UPDATE livros 
 SET quantidade = quantidade + 1 
