@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<!-- Tag raiz do HTML; 'lang="pt-br"' define o idioma principal da página como português do Brasil -->
+<html lang="pt-br">
+
+<!-- Cabeçalho do documento: contém configurações técnicas, metadados e links externos -->
+<head>
+    <!-- Define a codificação de caracteres como UTF-8 (permite acentos, 'ç' e símbolos sem quebrar) -->
+    <meta charset="UTF-8">
+
+    <!-- Torna o site responsivo em celulares e tablets, ajustando a largura da página à tela do dispositivo -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Conecta o arquivo de estilos CSS externo (style_home.css) para estilizar este documento HTML -->
+    <link rel="stylesheet" href="style/STYLE.css">
+
+    <!-- Define o ícone de favoritos (favicon) que aparece na aba do navegador -->
+    <link rel="shortcut icon" href="WhatsApp Image 2026-10-07 at 08.52.54.png" type="image/x-icon">
+
+    <!-- Define o título que aparece no topo da aba do navegador -->
+    <title>Salão de Beleza - L³.js</title>
+</head>
+
+<!-- Corpo do site: contém todo o conteúdo visível para os usuários -->
+<body>
+
+    <!-- Cabeçalho visível do site (barra superior onde ficam a logo e o menu) -->
+    <header>
+
+        <!-- Div para agrupar a imagem e o texto da logo no canto do cabeçalho -->
+        <div class="logo">
+            <!-- Imagem do logotipo do salão com texto alternativo para acessibilidade -->
+            <img src="imagens_videos/logo_home.png" alt="Logo L³.js" class="logo-img">
+
+            <!-- Agrupador para os textos descritivos da marca -->
+            <div class="logo-text">
+                <!-- Título principal da marca dentro da barra de navegação -->
+                <h1>Salão de Beleza - L³.js</h1>
+
+                <!-- Slogan ou frase de efeito abaixo da marca -->
+                <p>Onde a sua beleza ganha Destaque</p>
+            </div>
+        </div>
+
+        <!-- Elemento semântico para a barra de navegação de links -->
+        <nav>
+            <!-- Lista não ordenada para organizar os botões do menu -->
+            <ul>
+                <!-- Item da lista contendo o link para a página inicial (marcado como ativo/atual) -->
+                <li><a href="indexHome.html" class="active">Início</a></li>
+
+                <!-- Item da lista contendo o link para a página de procedimentos -->
+                <li><a href="procedimento.html">Procedimentos</a></li>
+
+                <!-- Item da lista contendo o link para atendimento especial -->
+                <li><a href="atendimento_especial.html">Atendimento Especial</a></li>
+
+                <!-- Item da lista contendo o link para a página de agendamentos -->
+                <li><a href="Agendamentos.html">Agendamentos</a></li>
+
+                <!-- Item da lista contendo o link para a página de ofertas -->
+                <li><a href="Ofertas.html">Ofertas</a></li>
+
+                <!-- Item da lista contendo o link para a página de informações do salão -->
+                <li><a href="Sobre.html">Sobre</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Conteúdo principal e central do documento -->
+    <main>
+
+        <!-- Seção de apresentação principal (Hero Section) identificada por ID e classe -->
+        <section id="inicio" class="hero-section">
+
+            <!-- Bloco para o texto institucional da seção principal -->
+            <div class="hero-text">
+                <!-- Título da seção -->
+                <h2>HOME</h2>
+
+                <!-- Parágrafos com a história e proposta de valor do salão L³JS -->
+                <p>A L³JS nasceu de um sonho: criar muito mais do que um salão de beleza. A ideia sempre foi construir
+                    um espaço onde cada pessoa pudesse se sentir bem-vinda, valorizada e especial.</p>
+
+                <p>Desde o início, a L³JS foi pensada para unir beleza, qualidade e atendimento humanizado, oferecendo
+                    diferentes serviços em um único lugar. Cabelos, unhas, cílios, maquiagem, sobrancelhas e cuidados
+                    com a beleza passaram a fazer parte de uma experiência criada para valorizar a individualidade de
+                    cada cliente.</p>
+
+                <p>Com o passar do tempo, o salão foi crescendo e ampliando seus serviços, mas sem perder aquilo que
+                    considera mais importante: o cuidado com as pessoas.</p>
+            </div>
+
+            <!-- Bloco para a imagem em destaque da fachada do salão -->
+            <div class="hero-image">
+                <!-- Imagem da fachada com descrição 'alt' para leitores de tela -->
+                <img src="imagens_videos/fachada_salão_home.jpeg" alt="Fachada do Salão L³.js">
+            </div>
+        </section>
+
+        <!-- Seção com o catálogo visual de serviços (Modelos) -->
+        <section class="modelos-section">
+            <!-- Título da seção de modelos -->
+            <h2>Modelos</h2>
+
+            <!-- Grade responsiva (Grid) que organizará os cartões de cada serviço -->
+            <div class="modelos-grid">
+
+                <!-- Cartão individual do serviço de Cabelos -->
+                <div class="card">
+                    <!-- Imagem descritiva do serviço -->
+                    <img src="https://i.pinimg.com/1200x/9e/2c/66/9e2c66c5f83ceebb90be16a563306bb3.jpg" alt="Cabelos">
+                    <!-- Nome do serviço -->
+                    <h3>Cabelos</h3>
+                    <!-- Resumo dos procedimentos oferecidos nessa categoria -->
+                    <p>Cortes, coloração e tratamentos para renovar e valorizar seus cabelos.</p>
+                </div>
+
+                <!-- Cartão individual do serviço de Unhas -->
+                <div class="card">
+                    <!-- Imagem descritiva do serviço -->
+                    <img src="https://i.pinimg.com/736x/d9/df/f8/d9dff850db4795d9a2cf8e4b02028aa6.jpg" alt="Unhas">
+                    <!-- Nome do serviço -->
+                    <h3>Unhas</h3>
+                    <!-- Resumo dos procedimentos oferecidos -->
+                    <p>Cuidados para mãos e pés com diferentes opções de esmaltação e acabamento.</p>
+                </div>
+
+                <!-- Cartão individual do serviço de Cílios -->
+                <div class="card">
+                    <!-- Imagem descritiva do serviço -->
+                    <img src="https://i.pinimg.com/1200x/40/b9/06/40b906ff8a3f85b07b0a08ba7981c1a7.jpg" alt="cilios">
+                    <!-- Nome do serviço -->
+                    <h3>Cílios</h3>
+                    <!-- Resumo dos procedimentos oferecidos -->
+                    <p>Extensão e Lifting de cílios para proporcionar mais destaque e valorizar a curvatura natural do
+                        olhar.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Seção com depoimentos e avaliação de clientes -->
+        <section class="feedback-section">
+            <!-- Título da seção de depoimentos -->
+            <h2>Feedback</h2>
+
+            <!-- Contêiner responsivo para agrupar as avaliações -->
+            <div class="feedback-container">
+
+                <!-- Elemento de artigo independente para a avaliação da cliente Mariana -->
+                <article class="feedback-item">
+                    <!-- Bloco contendo a foto da cliente -->
+                    <div class="feedback-img">
+                        <img src="https://i.pinimg.com/736x/3f/9e/64/3f9e64a316a3cc5ea3de9254cba30da7.jpg" alt="Cliente Mariana S.">
+                    </div>
+
+                    <!-- Bloco contendo a citação/texto do depoimento -->
+                    <div class="feedback-text">
+                        <p>“Fui muito bem recebida desde o primeiro momento. O atendimento foi cuidadoso e o resultado
+                            ficou incrível. Com certeza vou voltar!”</p>
+                        <!-- Destaque em negrito para o nome da cliente -->
+                        <strong>— Mariana S.</strong>
+                    </div>
+                </article>
+
+                <!-- Elemento de artigo independente para a avaliação da cliente Beatriz -->
+                <article class="feedback-item">
+                    <!-- Bloco contendo a foto da cliente -->
+                    <div class="feedback-img">
+                        <img src="https://i.pinimg.com/736x/63/1f/1a/631f1a592ac6fab541a7808d3c7c6f6e.jpg" alt="Cliente Beatriz A.">
+                    </div>
+
+                    <!-- Bloco contendo a citação/texto do depoimento -->
+                    <div class="feedback-text">
+                        <p>“Fiz meu procedimento de cílios e simplesmente amei. O resultado ficou delicado e valorizou
+                            muito meu olhar.”</p>
+                        <!-- Destaque em negrito para o nome da cliente -->
+                        <strong>— Beatriz A.</strong>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Rodapé da página: área inferior com direitos autorais e links de contato -->
+    <footer>
+        <!-- Texto de direitos autorais mantendo a marca protegida (usando a entidade &copy; para o símbolo ©) -->
+        <p>&copy; 2026 L³.js. Todos os direitos reservados.</p>
+
+        <!-- Bloco para agrupar os links sociais -->
+        <div class="social-icons">
+            <!-- Link externo para o perfil do Instagram (abre em nova aba com segurança através de target e rel) -->
+            <a href="https://www.instagram.com/salao.l3js/" target="_blank" rel="noopener noreferrer">Instagram</a>
+
+            <!-- Link direto para a conversa no WhatsApp com mensagem predefinida -->
+            <a href="https://wa.me5519995734253/?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20serviços!" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        </div>
+    </footer>
+
+</body>
+</html>

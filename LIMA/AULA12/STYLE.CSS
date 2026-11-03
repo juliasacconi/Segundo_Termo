@@ -1,0 +1,179 @@
+/* ROOT: Podemos guardar nossas cores e informações gerais em um único lugar
+*/
+
+:root {
+    /* Paleta de Cores */
+    --Nude: #d4b5a7;
+    --Vinho: #903E34;
+    --VinhoE: #670B0B;
+    --Branco: #FFFFFF;
+    --oFFwHITE: #F0E3D9;
+    --AzulE: #161F38;
+    --AzulN: #222E50;
+
+
+
+    /* Fontes */
+    --FontePrincipal: 'Arial';
+    --FonteSecundaria: "Titillium Web", sans-serif;
+
+}
+
+/* Reset */
+* {
+    box-sizing: smooth;
+
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    margin: 0;
+    font-family: var(--FonteSecundaria);
+    font-weight: 600;
+    color: var(--AzulE);
+    background-color: var(--oFFwHITE);
+    line-height: 1.6;
+
+}
+
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0;
+    padding: 3rem 1.5rem;
+}
+
+/* Fim das basicas */
+
+.id-v {
+    height: 100px;
+    background-color: var(--Nude);
+    color: var(--Branco);
+    font-family: var(--FontePrincipal);
+}
+
+h1,h2, h3 {
+    margin-top: 0;
+    color: black;
+}
+
+h1 {
+    font-size: 3rem;
+    line-height: 1.1;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+
+.id-nav {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    margin: 20px;
+    padding: 20px;
+}
+
+
+id-nav a {
+    color: var(--preto);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.id-v a:hover {
+    color: var(--Vinho);
+}
+
+
+.id-v a:focus-visible {
+    outline: 3px solid var(--Vinho);
+    outline-offset: 10px;
+}
+
+.id-ban {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 80px 8%;
+    background-color: var(--Branco);
+}
+
+.id-ban-img {
+    flex: 1;
+}
+
+.id-ban-img {
+    margin: 0;
+}
+
+
+.id-ban-img img {
+    width: 100%;
+    border-radius: 18px;
+}
+
+.botao-id {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 12px 24px;
+    background-color: var(--preto);
+    color: var(--branco);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 16px;
+    transition: backgroud-color 0.5s ease;
+}
+
+.botao-id:hover {
+    background-color: var(--Vinho);
+}
+
+.id-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.id-grid-cart {
+    height: 100%;
+    padding: 20px;
+    background-color: var(--branco);
+    border: 2px solid var(--Nude);
+    border-radius: 14px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+}
+
+.id-grid-cart img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(43, 23, 13, 0.08) ;
+}
+
+.id-grid-cart:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(43, 23, 13, 0.12);
+}
+
+

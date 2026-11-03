@@ -1,0 +1,417 @@
+/* ==========================================================================
+   PALETA DE CORES E VARIÁVEIS DA MARCA L³.js
+   ========================================================================== */
+
+/* Importa as fontes tipográficas 'Inter' e 'Playfair Display' diretamente do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap');
+
+/* Elemento raiz global (:root) onde são declaradas as variáveis CSS reaproveitáveis */
+:root {
+  /* Cores Principais do Projeto */
+  --bg-main: #F0E3D9;          /* Cor de fundo principal da página (off-white/bege suave) */
+  --bg-card: #FFFFFF;          /* Cor de fundo padrão dos cartões e contêineres internos (branco) */
+  --color-brown: #B5826C;      /* Cor secundária de apoio (marrom aveludado/nude) */
+  --color-wine-light: #903E3A; /* Tom de vinho médio/queimado para destaques e hovers */
+  --color-wine-dark: #670B0B;  /* Tom de vinho escuro/profundo para títulos e plano de fundo do cabeçalho/rodapé */
+
+  /* Azul Marinho (Destaque e Interação) */
+  --color-blue-cta: #222E50;   /* Tom de azul noite usado em detalhes, bordas e links em destaque */
+  --color-blue-hover: #161F38; /* Tom de azul mais escuro para efeito de passar o mouse */
+  --color-blue-soft: #EAEFF9;  /* Azul claro sutil para fundos ou detalhes leves */
+
+  /* Tipografia e Leitura */
+  --text-dark: #232323;        /* Cor do texto principal (quase preto para boa legibilidade) */
+  --text-muted: #5C5C5C;       /* Tom cinza intermediário para textos secundários e descrições */
+  --font-heading: 'Playfair Display', Georgia, serif; /* Fonte serifada para títulos elegantes */
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; /* Fonte sem serifa para corpo de texto */
+
+  /* Sombras e Bordas */
+  --shadow-sm: 0 2px 8px rgba(34, 46, 80, 0.06);   /* Sombra sutil para estado normal dos cards */
+  --shadow-md: 0 8px 24px rgba(34, 46, 80, 0.10);  /* Sombra média para elementos elevados e cabeçalho */
+  --shadow-lg: 0 16px 36px rgba(34, 46, 80, 0.16); /* Sombra intensa para destaques em hover */
+  --radius-sm: 8px;   /* Cantos levemente arredondados */
+  --radius-md: 16px;  /* Cantos com arredondamento médio */
+  --radius-lg: 24px;  /* Cantos com arredondamento amplo */
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Animação suave para efeitos interativos */
+}
+
+/* ==========================================================================
+   RESET E CONFIGURAÇÕES BASE
+   ========================================================================== */
+
+/* Seletor universal: zera margens/espaçamentos padrão e ajusta o cálculo de dimensões de todos os elementos */
+*, *::before, *::after {
+  margin: 0;             /* Remove margens padrão que vêm nos navegadores */
+  padding: 0;            /* Remove preenchimentos padrão que vêm nos navegadores */
+  box-sizing: border-box; /* Garante que 'padding' e 'border' não aumentem a largura total da caixa */
+}
+
+/* Configurações da tag raiz <html> */
+html {
+  scroll-behavior: smooth; /* Permite que a rolagem entre seções ocorra de forma suave ao clicar em links */
+}
+
+/* Configurações globais para a tag <body> */
+body {
+  font-family: var(--font-body);       /* Aplica a fonte 'Inter' em todo o corpo da página */
+  background-color: var(--bg-main);   /* Aplica a cor de fundo bege em toda a extensão do site */
+  color: var(--text-dark);             /* Define a cor padrão para os textos */
+  line-height: 1.6;                    /* Aumenta o espaçamento entre as linhas de texto para facilitar a leitura */
+  -webkit-font-smoothing: antialiased; /* Suaviza a renderização de fontes em telas Mac/iOS */
+}
+
+/* Regras padrão para todas as imagens <img> */
+img {
+  max-width: 100%; /* Garante que a imagem nunca ultrapasse a largura do contêiner pai */
+  height: auto;     /* Mantém a proporção original de altura e largura sem distorcer */
+  display: block;   /* Remove pequenos espaços em branco abaixo de imagens do tipo inline */
+}
+
+/* Configuração do contêiner principal <main> */
+main {
+  max-width: 1200px;     /* Limita a largura máxima do conteúdo central em telas grandes */
+  margin: 0 auto;        /* Centraliza o contêiner horizontalmente na tela */
+  padding: 3rem 1.5rem;  /* Espaçamento interno (top/bottom de 3rem, laterais de 1.5rem) */
+}
+
+/* Estilização para títulos das seções <h1>, <h2> e <h3> */
+h1, h2, h3 {
+  font-family: var(--font-heading); /* Aplica a fonte serifada 'Playfair Display' */
+  color: var(--color-wine-dark);    /* Define a cor vinho escuro para os títulos */
+  line-height: 1.2;                 /* Ajusta a altura da linha para títulos mais compactos */
+}
+
+/* ==========================================================================
+   1. CABEÇALHO E NAVEGAÇÃO (<header>, <nav>)
+   ========================================================================== */
+
+/* Barra do cabeçalho superior */
+header {
+  display: flex;                          /* Ativa o alinhamento Flexbox */
+  justify-content: space-between;         /* Empurra a logo para a esquerda e o menu de navegação para a direita */
+  align-items: center;                    /* Alinha verticalmente os elementos ao centro */
+  padding: 1.2rem 3rem;                   /* Preenchimento interno do cabeçalho */
+  background-color: rgba(103, 11, 11, 0.96); /* Fundo vinho com 96% de opacidade */
+  backdrop-filter: blur(10px);            /* Aplica efeito de desfoque/vidro no fundo durante a rolagem */
+  box-shadow: var(--shadow-md);            /* Adiciona uma sombra para destacar a barra do fundo */
+  position: sticky;                       /* Torna o cabeçalho fixo no topo da tela durante a rolagem */
+  top: 0;                                 /* Posiciona no topo zero da viewport */
+  z-index: 1000;                          /* Garante que a barra fique visível acima de qualquer outro elemento */
+  border-top: 4px solid var(--color-blue-cta); /* Adiciona um detalhe de linha azul no topo do cabeçalho */
+}
+
+/* Contêiner da logo (<div class="logo">) */
+.logo {
+  display: flex;          /* Alinha a imagem da logo e os textos lado a lado */
+  flex-direction: row;     /* Garante a orientação horizontal dos elementos */
+  align-items: center;    /* Centraliza verticalmente a imagem e os textos */
+  gap: 1rem;              /* Cria um espaço de 1rem entre a foto da logo e o texto */
+}
+
+/* Imagem da logo (<img class="logo-img">) */
+.logo-img {
+  width: 55px;          /* Largura fixa da logo */
+  height: 55px;         /* Altura fixa da logo */
+  border-radius: 50%;   /* Deixa a imagem completamente redonda */
+  object-fit: cover;    /* Recorta e ajusta a imagem dentro do círculo sem achatar */
+  border: none;         /* Garante a ausência de bordas padrão */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Adiciona sombra discreta ao redor da logo */
+}
+
+/* Agrupador de textos da marca (<div class="logo-text">) */
+.logo-text {
+  display: flex;          /* Ativa o Flexbox para o bloco de texto */
+  flex-direction: column; /* Empilha o <h1> e o <p> um abaixo do outro */
+}
+
+/* Título da marca no cabeçalho (.logo h1) */
+.logo h1 {
+  font-size: 1.8rem;       /* Tamanho da fonte do título no cabeçalho */
+  color: var(--bg-main);   /* Cor clara (bege) para dar contraste sobre o fundo vinho */
+  letter-spacing: 0.5px;   /* Pequeno espaçamento entre os caracteres */
+}
+
+/* Slogan da marca (.logo p) */
+.logo p {
+  font-size: 0.8rem;             /* Tamanho de fonte menor para o slogan */
+  color: var(--color-brown);     /* Cor marrom/nude para diferenciação visual */
+  font-family: var(--font-body); /* Usa a fonte 'Inter' em vez da fonte de título */
+  text-transform: uppercase;     /* Transforma todo o texto em letras maiúsculas */
+  letter-spacing: 1.5px;         /* Espaçamento amplo entre as letras para estilo moderno */
+}
+
+/* Lista do menu de navegação (<nav> <ul>) */
+nav ul {
+  display: flex;      /* Coloca todos os itens do menu (<li>) lado a lado na horizontal */
+  gap: 2rem;          /* Espaçamento de 2rem entre os links do menu */
+  list-style: none;   /* Remove as marcas/bolinhas padrão da lista do HTML */
+  align-items: center;/* Alinha o conteúdo dos itens ao centro verticalmente */
+}
+
+/* Links do menu (<nav> <a>) */
+nav a {
+  text-decoration: none;  /* Remove o sublinhado padrão dos links */
+  color: var(--bg-main);  /* Cor bege claro para destaque no fundo escuro */
+  font-weight: 500;       /* Peso de fonte médio */
+  font-size: 0.95rem;     /* Tamanho de fonte dos botões do menu */
+  transition: var(--transition); /* Adiciona transição suave para as mudanças de estilo */
+  position: relative;     /* Permite posicionar a linha animada (::after) em relação ao link */
+  padding: 6px 0;         /* Preenchimento superior e inferior */
+}
+
+/* Linha decorativa animada sob o link do menu (nav a::after) */
+nav a::after {
+  content: '';                         /* Cria um elemento estrutural vazio */
+  position: absolute;                  /* Posicionamento absoluto referente ao link pai */
+  bottom: 0;                           /* Encosta a linha na base do link */
+  left: 50%;                           /* Alinha a origem no centro horizontal */
+  transform: translateX(-50%);         /* Centraliza o ponto de expansão da linha */
+  width: 0%;                           /* Largura inicial zero (invisível em repouso) */
+  height: 3px;                         /* Espessura da linha */
+  background-color: var(--color-blue-cta); /* Cor azul da linha de destaque */
+  border-radius: 2px;                  /* Bordas suavemente arredondadas na linha */
+  transition: var(--transition);       /* Animação suave na expansão da linha */
+}
+
+/* Mudança de cor do texto ao passar o mouse (nav a:hover) */
+nav a:hover {
+  color: #FFFFFF; /* Muda a cor do texto para branco puro */
+}
+
+/* Ativação da linha decorativa ao passar o mouse ou na página atual (.active) */
+nav a:hover::after,
+nav a.active::after {
+  width: 100%; /* Expande a linha azul para a largura total do link */
+}
+
+/* ==========================================================================
+   2. SEÇÃO HERO / APRESENTAÇÃO (<section class="hero-section">)
+   ========================================================================== */
+
+/* Seção de abertura da página (.hero-section) */
+.hero-section {
+  display: grid;                        /* Ativa o Grid Layout */
+  grid-template-columns: 1fr 1fr;       /* Divide o espaço em duas colunas idênticas (50% cada) */
+  align-items: center;                  /* Alinha o texto e a imagem verticalmente ao centro */
+  gap: 4rem;                            /* Espaço amplo entre a coluna de texto e a coluna da imagem */
+  padding: 4rem 0 5rem;                 /* Espaçamento interno vertical */
+}
+
+/* Título da Seção Hero (.hero-text h2) */
+.hero-text h2 {
+  font-size: 3rem;              /* Fonte ampla para o título da página inicial */
+  margin-bottom: 1.2rem;        /* Distância até o primeiro parágrafo */
+  color: var(--color-wine-dark);/* Cor vinho escuro */
+}
+
+/* Parágrafos institucionais da Seção Hero (.hero-text p) */
+.hero-text p {
+  margin-bottom: 1.5rem;     /* Espaçamento entre os parágrafos */
+  color: var(--text-muted);  /* Cor cinza intermediária para leitura agradável */
+  font-size: 1.05rem;        /* Tamanho ligeiramente maior para o texto principal */
+}
+
+/* Contêiner da imagem no Hero (.hero-image) */
+.hero-image {
+  position: relative; /* Permite posicionar eventuais elementos decorativos internos */
+}
+
+/* Imagem da fachada no Hero (.hero-image img) */
+.hero-image img {
+  border-radius: var(--radius-md);           /* Arredonda os cantos da foto em 16px */
+  box-shadow: var(--shadow-lg);              /* Aplica sombra profunda para destacar a imagem */
+  border: 4px solid var(--color-blue-cta);   /* Aplica moldura em tom azul marinho ao redor da foto */
+  width: 100%;                               /* Ajusta a largura para preencher o contêiner */
+  object-fit: cover;                         /* Garante proporção correta sem distorcer a imagem */
+}
+
+/* ==========================================================================
+   3. SEÇÃO MODELOS DE SERVIÇOS (<section class="modelos-section">)
+   ========================================================================== */
+
+/* Espaçamento geral da Seção Modelos */
+.modelos-section {
+  padding: 4rem 0; /* Preenchimento vertical da seção */
+}
+
+/* Título principal da Seção Modelos (.modelos-section h2) */
+.modelos-section h2 {
+  text-align: center;   /* Centraliza o título horizontalmente */
+  font-size: 2.5rem;    /* Tamanho de fonte destacado */
+  margin-bottom: 2.5rem;/* Espaço até a grade de cards */
+}
+
+/* Grade para organização dos cards (.modelos-grid) */
+.modelos-grid {
+  display: grid;                                          /* Ativa o Grid Layout */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Cria colunas flexíveis que se ajustam automaticamente a partir de 300px */
+  gap: 2.5rem;                                            /* Espaçamento de 2.5rem entre os cards */
+}
+
+/* Estilização individual de cada cartão (.card) */
+.card {
+  background-color: var(--bg-card);             /* Fundo branco para o card */
+  border-radius: var(--radius-md);              /* Bordas arredondadas em 16px */
+  padding: 1.8rem;                              /* Espaçamento interno */
+  box-shadow: var(--shadow-sm);                  /* Sombra sutil padrão */
+  transition: var(--transition);                 /* Adiciona transição para animações no hover */
+  border-top: 5px solid var(--color-blue-cta);  /* Borda superior azul decorativa */
+  display: flex;                                /* Ativa o Flexbox no card */
+  flex-direction: column;                       /* Organiza o conteúdo (imagem, h3, p) em formato de coluna */
+}
+
+/* Efeito de elevação ao passar o mouse sobre o card (.card:hover) */
+.card:hover {
+  transform: translateY(-10px);    /* Desloca o card 10px para cima */
+  box-shadow: var(--shadow-lg);     /* Aumenta a intensidade da sombra */
+}
+
+/* Imagens dentro dos cards (.card img) */
+.card img {
+  width: 100%;                   /* Preenche toda a largura disponível do card */
+  height: 230px;                 /* Altura padrão fixa para todas as fotos dos cards */
+  object-fit: cover;             /* Mantém a proporção da imagem sem achatar */
+  border-radius: var(--radius-sm);/* Cantos arredondados na imagem interna */
+  margin-bottom: 1.2rem;           /* Distância entre a imagem e o título do card */
+}
+
+/* Título do serviço dentro do card (.card h3) */
+.card h3 {
+  color: var(--color-blue-cta); /* Cor azul destaque no nome do procedimento */
+  font-size: 1.4rem;             /* Tamanho de fonte do título */
+  margin-bottom: 0.5rem;         /* Distância até o parágrafo descritivo */
+}
+
+/* Texto descritivo do card (.card p) */
+.card p {
+  color: var(--text-muted); /* Cor de texto suave */
+  font-size: 0.95rem;       /* Tamanho levemente menor para descrições */
+}
+
+/* ==========================================================================
+   4. SEÇÃO FEEDBACKS / DEPOIMENTOS (<section class="feedback-section">)
+   ========================================================================== */
+
+/* Espaçamento da Seção de Feedbacks */
+.feedback-section {
+  padding: 4rem 0; /* Preenchimento interno vertical */
+}
+
+/* Título principal da Seção Feedback (.feedback-section h2) */
+.feedback-section h2 {
+  text-align: center;    /* Centraliza o texto */
+  font-size: 2.5rem;     /* Tamanho de fonte */
+  margin-bottom: 3rem;   /* Espaçamento inferior amplo até os depoimentos */
+}
+
+/* Contêiner da grade de depoimentos (.feedback-container) */
+.feedback-container {
+  display: grid;                                          /* Ativa o Grid Layout */
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Responsividade automática com largura mínima de 320px por card */
+  gap: 2rem;                                              /* Distância entre cada card de feedback */
+}
+
+/* Card individual de depoimento (<article class="feedback-item">) */
+.feedback-item {
+  background-color: var(--bg-card);              /* Fundo branco */
+  padding: 2rem;                                 /* Preenchimento interno amplo */
+  border-radius: var(--radius-md);               /* Cantos arredondados de 16px */
+  box-shadow: var(--shadow-sm);                   /* Sombra suave */
+  border-left: 6px solid var(--color-blue-cta);  /* Faixa decorativa azul na lateral esquerda do card */
+  transition: var(--transition);                 /* Transição suave para interação */
+  display: flex;                                 /* Ativa o Flexbox para alinhar foto e texto */
+  align-items: center;                           /* Alinha foto e depoimento verticalmente ao centro */
+  gap: 1.5rem;                                   /* Espaço entre a foto do cliente e a citação */
+}
+
+/* Efeito ao passar o mouse sobre o depoimento (.feedback-item:hover) */
+.feedback-item:hover {
+  box-shadow: var(--shadow-md);   /* Aumenta a intensidade da sombra */
+  transform: translateY(-4px);    /* Pequeno deslocamento de 4px para cima */
+}
+
+/* Moldura para a foto do cliente (.feedback-img) */
+.feedback-img {
+  flex-shrink: 0; /* Impede que a foto seja comprimida caso o texto seja longo */
+}
+
+/* Foto de perfil da cliente (.feedback-img img) */
+.feedback-img img {
+  width: 65px;                            /* Largura fixa da foto */
+  height: 65px;                           /* Altura fixa da foto */
+  border-radius: 50%;                     /* Deixa a imagem completamente circular */
+  object-fit: cover;                      /* Garante enquadramento correto do rosto */
+  border: 2px solid var(--color-blue-cta); /* Borda em tom azul ao redor da foto */
+}
+
+/* Bloco contendo os textos do depoimento (.feedback-text) */
+.feedback-text {
+  display: flex;          /* Ativa o Flexbox no texto */
+  flex-direction: column; /* Organiza a citação e o nome do autor em coluna */
+}
+
+/* Parágrafo do depoimento (.feedback-text p) */
+.feedback-text p {
+  font-size: 0.95rem;       /* Tamanho do texto de depoimento */
+  font-style: italic;       /* Estilo itálico para enfatizar citação */
+  color: var(--text-dark);  /* Cor do texto principal */
+  margin-bottom: 0.5rem;    /* Espaço em relação ao nome do autor */
+  line-height: 1.6;         /* Espaçamento entre linhas agradável */
+}
+
+/* Nome em destaque do autor do depoimento (.feedback-text strong) */
+.feedback-text strong {
+  display: block;              /* Garante que o nome fique na própria linha */
+  color: var(--color-blue-cta);/* Nome em tom azul destaque */
+  font-size: 0.9rem;           /* Tamanho levemente menor para o nome */
+}
+
+/* ==========================================================================
+   5. RODAPÉ (<footer>)
+   ========================================================================== */
+
+/* Rodapé inferior da página */
+footer {
+  background-color: var(--color-wine-dark);    /* Fundo em cor vinho escuro */
+  color: var(--bg-main);                      /* Texto bege claro para leitura sobre fundo escuro */
+  padding: 3rem 2.5rem;                       /* Espaçamento interno vertical e lateral */
+  margin-top: 4rem;                           /* Espaço acima do rodapé separando do conteúdo */
+  border-bottom: 6px solid var(--color-blue-cta);/* Faixa azul decorativa na borda inferior da tela */
+  display: flex;                              /* Ativa o Flexbox no rodapé */
+  justify-content: space-between;             /* Posiciona direitos autorais à esquerda e redes sociais à direita */
+  align-items: center;                        /* Alinha verticalmente os elementos ao centro */
+  flex-wrap: wrap;                            /* Permite que os elementos dobrem de linha em telas pequenas */
+  gap: 1.5rem;                                /* Espaço entre os elementos caso haja quebra de linha */
+}
+
+/* Texto de direitos autorais no rodapé (footer p) */
+footer p {
+  font-size: 0.9rem; /* Tamanho do texto dos direitos autorais */
+  opacity: 0.9;      /* Suave transparência de 90% */
+}
+
+/* Contêiner de links para redes sociais (.social-icons) */
+.social-icons {
+  display: flex; /* Disposição horizontal para os links sociais */
+  gap: 1.5rem;   /* Espaço entre cada link social */
+}
+
+/* Botões/Links das redes sociais (.social-icons a) */
+.social-icons a {
+  text-decoration: none;                      /* Remove sublinhado padrão do link */
+  color: var(--bg-main);                      /* Cor bege claro no texto do botão */
+  background-color: rgba(255, 255, 255, 0.08);/* Fundo translúcido (8% de opacidade branca) */
+  padding: 0.5rem 1rem;                       /* Preenchimento interno criando formato de pílula/botão */
+  border-radius: var(--radius-sm);            /* Bordas levemente arredondadas */
+  font-weight: 500;                           /* Peso da fonte em nível médio */
+  font-size: 0.85rem;                         /* Tamanho de fonte compacto */
+  transition: var(--transition);              /* Transição fluida ao passar o mouse */
+  border: 1px solid rgba(255, 255, 255, 0.1);  /* Moldura fina externa sutil */
+}
+
+/* Efeito hover nos botões de redes sociais (.social-icons a:hover) */
+.social-icons a:hover {
+  background-color: var(--color-blue-cta); /* Troca a cor de fundo para o azul destaque */
+  color: #FFFFFF;                          /* Cor do texto para branco puro */
+  transform: translateY(-2px);             /* Sutil elevação de 2px no botão */
+}
