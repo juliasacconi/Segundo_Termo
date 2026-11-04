@@ -1,0 +1,402 @@
+
+
+
+:root {
+    /* Paleta Neutra Sofisticada */
+    
+    --bg-primary: #420000;
+    --bg-secondary: #830000;
+    --bg-card: #282828;
+    --text-primary: #f5f5f5;
+    --text-secondary: #a0a0a0;
+    --accent-blue-subtle: hwb(209 60% 0%);
+    --border-color: #c2cdff;
+    --transition: all 0.3s ease;
+}
+
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* cabeçalho */
+
+header {
+    background-color: rgba(95, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1.5rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+
+.logo h1 {
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    font-weight: 800;
+    color: var(--text-primary);
+}
+
+
+.logo p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+
+nav ul li a {
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--text-secondary);
+    transition: var(--transition);
+}
+
+
+nav ul li a:hover {
+    color: var(--text-primary);
+}
+
+
+/* inicio */
+
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6rem 5%;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+.hero-text {
+    flex: 1;
+}
+
+
+.hero-text h2 {
+    font-size: 2.8rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+}
+
+
+.hero-text p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+
+.btn-cta {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background-color: var(--text-primary);
+    color: var(--bg-primary);
+    font-weight: 700;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    transition: var(--transition);
+}
+
+
+.btn-cta:hover {
+    background-color: var(--text-secondary);
+    transform: translateY(-2px);
+}
+
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+
+.hero-card-wrapper img {
+    width: 100%;
+    max-width: 1000px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--border-color);
+    object-fit: cover;
+}
+
+
+/* Seção geral e grid */
+
+
+section {
+    padding: 5rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+section h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+
+section h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 2px;
+    background-color: var(--text-primary);
+    margin: 0.8rem auto 0;
+}
+
+
+/* Cards */
+
+
+.divas-grid, 
+.top-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+}
+
+
+.card {
+    background-color: var(--bg-secondary);
+    border-radius: 8px;
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #555;
+}
+
+
+.card-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+
+.card-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(20%);
+    transition: var(--transition);
+}
+
+
+.card:hover .card-image-wrapper img {
+    filter: grayscale(0%);
+    transform: scale(1.03);
+}
+
+
+.card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+}
+
+
+.card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+
+.card-badge,
+.color-pink, .color-cyan, .color-yellow,
+.yellow-card, .cyan-card {
+    background-color: var(--bg-card);
+    border-color: var(--border-color);
+}
+
+
+/* Novidades */
+
+
+.novidades-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+
+.novidade-item {
+    background-color: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--text-primary);
+    transition: var(--transition);
+}
+
+
+.novidade-item:hover {
+    background-color: var(--bg-card);
+}
+
+
+.novidade-text p {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--text-primary);
+}
+
+
+/* Banner de Destaque */
+
+
+.fim-section {
+    background-color: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    text-align: center;
+    padding: 4rem 1rem;
+}
+
+
+.fim-barra h5 {
+    color: var(--text-secondary);
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+}
+
+
+.fim-barra h2 {
+    font-size: 3rem;
+    margin: 0.5rem 0;
+    letter-spacing: 4px;
+}
+
+
+.fim-barra h2::after {
+    display: none;
+}
+
+
+.fim-barra h6 {
+    color: var(--text-secondary);
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+
+/* Rodape */
+
+
+footer {
+    background-color: rgba(95, 0, 0, 0.95);;
+    padding: 4rem 5% 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+.footer-info p {
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+
+.footer-info h5 {
+    color: var(--text-secondary);
+    font-weight: 400;
+        align-items: center;
+    font-size: 0.85rem;
+}
+
+
+.social-icons {
+    display: flex;
+    gap: 1.5rem;
+}
+
+
+.social-icons a {
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    transition: var(--transition);
+}
+
+
+.social-icons a:hover {
+    background-color: var(--text-primary);
+    color: var(--bg-primary);
+}
+
+
+/* Responsividade */
+
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 3rem 5%;
+    }
+
+
+    footer {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+        text-align: center;
+    }
+}
