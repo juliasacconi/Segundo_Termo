@@ -254,4 +254,4 @@ SELECT id_jogo, titulo, quantidade_disponivel FROM JOGOS WHERE id_jogo IN (1, 6)
 
 ROLLBACK TO SAVEPOINT ponto_apos_jogo1;
 
-COMMIT;
+COMMIT; -- salvando tudo
