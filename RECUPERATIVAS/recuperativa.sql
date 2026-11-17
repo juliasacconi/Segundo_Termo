@@ -47,7 +47,7 @@ CREATE TABLE LOCACAO (
     data_devolucao DATE NULL,
     status_locacao VARCHAR(20) NOT NULL DEFAULT 'ABERTA',
     id_cliente INT NOT NULL,
-    id_jogo INT NOT NULL, -- CORRIGIDO: alterado de id_jogos para id_jogo
+    id_jogo INT NOT NULL, 
     CONSTRAINT chk_status_locacao CHECK (status_locacao IN ('ABERTA', 'DEVOLVIDA', 'ATRASADA')),
     CONSTRAINT fk_locacao_cliente FOREIGN KEY (id_cliente) 
         REFERENCES CLIENTE(id_cliente)
@@ -80,8 +80,7 @@ INSERT INTO PLATAFORMA (nome) VALUES
 INSERT INTO CATEGORIA (descricao) VALUES
 ('Rpg'),
 ('Ação & Aventura'),
-('Terror'),
-('Corrida'); 
+('Terror'); 
 
 
 INSERT INTO JOGOS (titulo, desenvolvedora, codigo, ano_lancamento, quantidade_disponivel, id_plataforma, id_categoria) VALUES
@@ -256,4 +255,3 @@ SELECT id_jogo, titulo, quantidade_disponivel FROM JOGOS WHERE id_jogo IN (1, 6)
 ROLLBACK TO SAVEPOINT ponto_apos_jogo1;
 
 COMMIT;
-
