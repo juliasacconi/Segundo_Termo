@@ -1,13 +1,462 @@
- /* ----- PALETA DE CORES ----- */
+
+/* Importação de fonte moderna e amigável */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
 
 
- :root {
+/* PALETA DE CORES */
+:root {
+    --winx-roxo-escuro: #450585;      /* Fundo do Header e Footer */
+    --winx-magenta: #cf0072;          /* Cor principal das Winx */
+    --winx-rosa-claro: #ffceec;       /* Fundo suave para áreas de destaque */
+    --winx-azul-bloom: #18b1cf;       /* Azul (destaques e hover) */
+    --winx-dourado-stella: #ffd363;   /* Detalhes dourados */
+    --fundo-pagina: #faf5ff;          /* Lilás bem clarinho de fundo */
+    --branco: #ffffff;
+    --texto-escuro: #0d001a;
+    --borda-suave: #e2c6f5;
+}
 
---color-pinkE: #8A0B3B;
---color-creme: #FFF8F1;
---color-cinza: #3E3041;
---color-black: #070201;
---color-pinkC: #F78D8E;
+/* Reset */
 
- }
+* {
 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+html {
+
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px; 
+
+}
+
+
+body {
+
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--fundo-pagina);
+    color: var(--texto-escuro);
+    line-height: 1.6;
+
+}
+
+/* CABEÇALHO */
+
+.inicio {
+
+    background-color: var(--winx-roxo-escuro);
+    padding: 18px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    border-bottom: 4px solid var(--winx-magenta);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+}
+
+.inicio a {
+
+    text-decoration: none;
+
+}
+
+.inicio h1 {
+
+    color: var(--branco);
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+
+}
+
+.inicio h1 span {
+
+    color: var(--winx-dourado-stella);
+
+}
+
+.navegacao {
+
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+
+}
+
+.navegacao li {
+
+    display: flex;
+    align-items: center;
+
+}
+
+
+.navegacao li:not(:last-child)::after {
+
+    content: "|";
+    color: rgba(255, 255, 255, 0.35);
+    margin-left: 15px;
+
+}
+
+.navegacao a {
+
+    color: var(--branco);
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+
+}
+
+.navegacao a:hover {
+
+    color: var(--winx-dourado-stella);
+
+}
+
+/* SEÇÃO HERO */
+
+.hero {
+
+    max-width: 1200px;
+    margin: 25px auto;
+    padding: 0 20px;
+
+}
+
+.hero-inicio {
+
+    background: linear-gradient(135deg, #ffd6ec 0%, #d8f3ff 100%);
+    border: 2px solid var(--borda-suave);
+    border-radius: 12px;
+    padding: 45px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    box-shadow: 0 6px 20px rgba(233, 30, 140, 0.1);
+
+}
+
+.hero-texto {
+
+    flex: 1.3;
+
+}
+
+.hero-texto h1 {
+
+    font-size: 2.4rem;
+    color: var(--winx-magenta);
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    line-height: 1.2;
+
+}
+
+.hero-texto p {
+
+    font-size: 1rem;
+    color: var(--texto-escuro);
+    margin-bottom: 25px;
+    text-align: justify;
+
+}
+
+.btn-destaque {
+
+    display: inline-block;
+    background: linear-gradient(90deg, var(--winx-magenta), #b5179e);
+    color: var(--branco);
+    text-decoration: none;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 12px rgba(233, 30, 140, 0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+}
+
+.btn-destaque:hover {
+
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 180, 216, 0.45);
+    background: linear-gradient(90deg, var(--winx-azul-bloom), var(--winx-magenta));
+
+}
+
+.hero-imagem {
+
+    flex: 1;
+    display: flex;
+    justify-content: center;
+
+}
+
+.hero-imagem img {
+
+    width: 100%;
+    max-width: 380px;
+    border-radius: 12px;
+    border: 4px solid var(--branco);
+    box-shadow: 0 8px 20px rgba(45, 11, 78, 0.15);
+    object-fit: cover;
+
+}
+
+/* ATRAÇÕES PRINCIPAIS */
+
+.atracoes {
+
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+
+}
+
+.titulo-secao {
+
+    text-align: center;
+    font-size: 1.8rem;
+    color: var(--winx-roxo-escuro);
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    position: relative;
+
+}
+
+.titulo-secao::after {
+
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--winx-magenta), var(--winx-azul-bloom));
+    margin: 8px auto 0;
+    border-radius: 2px;
+
+}
+
+
+.grid-cards {
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+
+}
+
+.card {
+
+    background-color: var(--branco);
+    border: 2px solid var(--borda-suave);
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+.card:hover {
+
+    transform: translateY(-5px);
+    border-color: var(--winx-magenta);
+    box-shadow: 0 8px 20px rgba(233, 30, 140, 0.18);
+
+}
+
+.card img {
+
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    border-bottom: 3px solid var(--winx-rosa-claro);
+
+}
+
+.card-corpo {
+
+    padding: 15px;
+
+}
+
+.card-corpo h3 {
+
+    font-size: 1.25rem;
+    color: var(--winx-roxo-escuro);
+    font-weight: 700;
+
+}
+
+
+/* PROGRAMAÇÃO E SOBRE */
+
+   .info-evento {
+
+    max-width: 1200px;
+    margin: 30px auto 45px;
+    padding: 0 20px;
+
+}
+
+.grid-duplo {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+
+}
+
+.bloco-info {
+
+    background-color: var(--branco);
+    border: 2px solid var(--borda-suave);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(45, 11, 78, 0.05);
+
+}
+
+.bloco-info h2 {
+
+    font-size: 1.4rem;
+    color: var(--winx-magenta);
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    text-align: center;
+    border-bottom: 2px dashed var(--borda-suave);
+    padding-bottom: 10px;
+
+}
+
+.lista-horarios {
+
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+}
+
+.lista-horarios li {
+
+    background-color: var(--winx-rosa-claro);
+    padding: 10px 16px;
+    border-radius: 8px;
+    border-left: 4px solid var(--winx-magenta);
+    font-size: 0.98rem;
+
+}
+
+.lista-horarios strong {
+
+    color: var(--winx-roxo-escuro);
+
+}
+
+.bloco-info p {
+
+    text-align: justify;
+    font-size: 0.98rem;
+    color: var(--texto-escuro);
+
+}
+
+/* RODAPÉ */
+
+.rodape {
+
+    background-color: var(--winx-roxo-escuro);
+    color: var(--branco);
+    text-align: center;
+    padding: 25px 20px;
+    border-top: 4px solid var(--winx-azul-bloom);
+
+}
+
+.rodape-conteudo p {
+
+    margin: 5px 0;
+    font-size: 0.9rem;
+
+}
+
+.rodape-conteudo a {
+
+    color: var(--winx-dourado-stella);
+    text-decoration: none;
+    font-weight: 600;
+
+}
+
+.rodape-conteudo a:hover {
+
+    text-decoration: underline;
+
+}
+
+/* RESPONSIVIDADE */
+
+
+@media (max-width: 900px) {
+
+    .hero-inicio {
+        flex-direction: column;
+        text-align: center;
+
+    }
+
+    .hero-texto p {
+
+        text-align: center;
+
+    }
+
+    .grid-cards {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+    .grid-duplo {
+
+        grid-template-columns: 1fr;
+
+    }
+}
+
+@media (max-width: 600px) {
+
+    .inicio {
+
+        flex-direction: column;
+        gap: 12px;
+
+    }
+
+    .navegacao {
+
+        gap: 8px;
+
+    }
+
+    .grid-cards {
+
+        grid-template-columns: 1fr;
+
+    }
+}
